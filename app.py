@@ -23,12 +23,12 @@ and curing conditions using different machine learning models.
 def load_models():
     models = {}
     model_files = [
-        'lasso_model.pkl',
-        'decision_tree_model.pkl', 
-        'random_forest_model.pkl',
-        'ada_boost_model.pkl',
-        'svr_model.pkl',
-        'knn_model.pkl'
+        'models/lasso_model.pkl',
+        'models/decision_tree_model.pkl', 
+        'models/random_forest_model.pkl',
+        'models/ada_boost_model.pkl',
+        'models/svr_model.pkl',
+        'models/knn_model.pkl'
     ]
     for model_file in model_files:
         try:
@@ -40,7 +40,7 @@ def load_models():
     
     # Load scaler
     try:
-        with open('scaler.pkl', 'rb') as file:
+        with open('models/scaler.pkl', 'rb') as file:
             models['scaler'] = pickle.load(file)
     except FileNotFoundError:
         st.warning("Scaler file not found - proceeding without scaling")
